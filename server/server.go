@@ -25,7 +25,8 @@ type server struct {
 func (s *server) SayHello(ctx context.Context, in *pb.Greet) (*pb.GreetReply, error) {
 	log.Printf("Received: %v", in.GetName())
 	//in.GetGender()
-	return &pb.GreetReply{Message: "Hello " + in.GetName()}, nil
+	return &pb.GreetReply{Message: "Hello" + in.GetName()}, nil
+	// + in.GetName()
 }
 
 func main() {

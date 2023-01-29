@@ -35,9 +35,9 @@ func main() {
 	// Contact the server and print out its response.
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	r, err := c.SayHello(ctx, &pb.Greet{Name: *name, Gender: *gender})
+	r, err := c.SayHello(ctx, &pb.Greet{Name: name, Gender: gender})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
-	log.Printf("Greeting: %s", r.GetName())
+	log.Printf("Greeting: %s", r.GetMessage())
 }

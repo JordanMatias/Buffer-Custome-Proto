@@ -8,7 +8,7 @@ message Greet {
 }
 
 message GreetReply {
-    optional string message = 3;
+    string message = 1;
 }
 
 service MessageGuide {
