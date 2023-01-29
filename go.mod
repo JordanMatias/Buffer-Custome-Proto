@@ -1,4 +1,4 @@
-module test
+module github.com/krushn/protobuf
 
 go 1.19
 
