@@ -15,7 +15,7 @@ import (
 //proxy.golang.org/krushn/protobuf/examples
 
 var (
-	port = flag.Int("port", 50051, "The server port")
+	port = flag.Int("port", 50052, "The server port")
 )
 
 // server is used to implement Server
@@ -24,11 +24,18 @@ type server struct {
 }
 
 // SayHello implements UnimplementedMessageGuideServer
-func (s *server) SayHello(ctx context.Context, in *pb.Greet) (pb.GreetReply, error) {
+func (s *server) SayHello(ctx context.Context, in *pb.Greet) (*pb.GreetReply, error) {
 	log.Printf("Received: %v", in.GetName())
-	//in.GetGender()
-	return &pb.GreetReply{Msg: "Hello" + in.GetName()}, nil
-	// + in.GetName()
+
+	var prename string
+
+	if in.GetGender() == "male" {
+		prename = "Mr."
+	} else {
+		prename = "Miss"
+	}
+
+	return &pb.GreetReply{Msg: "Hello, " + prename + " " + in.GetName()}, nil
 }
 
 func main() {

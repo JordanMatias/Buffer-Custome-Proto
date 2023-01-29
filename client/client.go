@@ -17,7 +17,7 @@ const (
 )
 
 var (
-	addr   = flag.String("addr", "localhost:50051", "the address to connect to")
+	addr   = flag.String("addr", "localhost:50052", "the address to connect to")
 	name   = flag.String("name", defaultName, "Name to greet")
 	gender = flag.String("gender", defaultGender, "Gender to greet")
 )
@@ -39,5 +39,5 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
-	log.Printf("Greeting: %s", r.GetMessage())
+	log.Printf("Greeting: %s", r.GetMsg())
 }
