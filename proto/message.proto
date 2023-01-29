@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "github.com/krushn/protobuf/examples";
+
+message Greet {
+    optional string name = 1;
+    optional string gender = 2;
+}
+
+message GreetReply {
+    optional string message = 3;
+}
+
+service MessageGuide {
+    rpc SayHello(Greet) returns (GreetReply) {};   
+}
