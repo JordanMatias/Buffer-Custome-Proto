@@ -11,6 +11,7 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 )
 
+
 const (
 	defaultName   = "Krish"
 	defaultGender = "male"
@@ -20,6 +21,9 @@ var (
 	addr   = flag.String("addr", "localhost:50052", "the address to connect to")
 	name   = flag.String("name", defaultName, "Name to greet")
 	gender = flag.String("gender", defaultGender, "Gender to greet")
+	age   = flag.String("age", defaultAge, "Age to greet")
+	name   = flag.String("bio", defaultName, "Bio to greet")
+	gender = flag.String("star", defaultGender, "Star to greet")
 )
 
 func main() {
