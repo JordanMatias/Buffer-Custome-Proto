@@ -11,6 +11,10 @@ message GreetReply {
     string msg = 1;
 }
 
+message FirebaseNotify {
+    string msg = 1;
+}
+
 service MessageGuide {
     rpc SayHello(Greet) returns (GreetReply) {};   
 }
