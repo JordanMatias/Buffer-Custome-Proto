@@ -43,5 +43,10 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
+	if err != nil {
+		log.Fatalf("did not connect: %v", err)
+	}
+	defer conn.Close()
+	c := pb.NewMessageGuideClient(conn)
 	log.Printf("Greeting: %s", r.GetMsg())
 }
