@@ -5,11 +5,7 @@ option go_package = "github.com/krushn/protobuf/examples";
 message Greet {
     optional string name = 1;
     optional string gender = 2;
-}
 
-message GreetReply {
-    string msg = 1;
-}
 
 message FirebaseNotify {
     string msg = 1;
